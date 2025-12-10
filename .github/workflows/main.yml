@@ -36,7 +36,7 @@ jobs:
   ########################
   lint-check:
     name: Format, compilation and lint check
-    runs-on: ubuntu-latest
+    runs-on: tenki-standard-autoscale
     steps:
       - name: git checkout
         uses: actions/checkout@v5
@@ -75,7 +75,7 @@ jobs:
   check-commits:
     if: github.event_name == 'pull_request'
     name: Check commits
-    runs-on: ubuntu-latest
+    runs-on: tenki-standard-autoscale
     steps:
       - name: git checkout
         uses: actions/checkout@v5
@@ -101,7 +101,7 @@ jobs:
   ########################
   unit-test:
     name: run unit tests
-    runs-on: ubuntu-latest
+    runs-on: tenki-standard-autoscale
     strategy:
       # Allow other tests in the matrix to continue if one fails.
       fail-fast: false
